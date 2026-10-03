@@ -1,0 +1,423 @@
+/* ============================================================
+   COURSE REGISTRATION FORM - style.css
+   A clean, modern, beginner-friendly stylesheet.
+   ============================================================ */
+
+/* ============================================================
+   1. IMPORT FONTS
+   We use Google Fonts for a clean, professional look.
+   'Poppins' is a modern, rounded font easy to read on screens.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   2. CSS RESET & BASE STYLES
+   box-sizing: border-box makes sizing easier — padding and
+   borders are included in the element's total width/height.
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   3. BODY — Background & Font
+   The body is the entire visible page area.
+   ============================================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* A soft blue-purple gradient as the page background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;         /* Page fills at least the full screen height */
+  padding: 30px 15px;        /* Space around the form */
+  color: #333;               /* Default text colour */
+}
+
+/* ============================================================
+   4. HEADER
+   The top banner with the page title and subtitle.
+   ============================================================ */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  margin-bottom: 8px;
+}
+
+.header-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+}
+
+/* ============================================================
+   5. MAIN — Centre the form on the page
+   ============================================================ */
+main {
+  display: flex;
+  justify-content: center;   /* Centres the form horizontally */
+}
+
+/* ============================================================
+   6. REGISTRATION FORM — Card Container
+   The white card that holds the entire form.
+   ============================================================ */
+.registration-form {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 720px;          /* Maximum width on large screens */
+  border-radius: 16px;       /* Rounded corners for a modern card look */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25); /* Soft drop shadow */
+  overflow: hidden;          /* Clips children to rounded corners */
+  padding-bottom: 10px;
+}
+
+/* ============================================================
+   7. FORM SECTIONS
+   Each section wraps one <fieldset>.
+   ============================================================ */
+.form-section {
+  padding: 0 30px 10px;
+  /* Add a subtle separator between sections */
+}
+
+.form-section:first-of-type {
+  padding-top: 30px;
+}
+
+/* ============================================================
+   8. FIELDSET & LEGEND
+   <fieldset> draws a border around a group of fields.
+   <legend> is the title label for that group.
+   ============================================================ */
+fieldset {
+  border: 2px solid #e8ecf0; /* Light grey border */
+  border-radius: 12px;
+  padding: 20px 25px 25px;
+  margin-bottom: 25px;
+}
+
+legend {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a4fcf;             /* Purple accent colour */
+  padding: 4px 12px;
+  background: #f0eeff;        /* Light purple background pill */
+  border-radius: 20px;
+  border: 2px solid #d5cffb;
+}
+
+/* ============================================================
+   9. FORM GROUP — Wraps each label + input pair
+   ============================================================ */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   10. LABELS
+   ============================================================ */
+label {
+  display: block;             /* Label sits on its own line above the input */
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* The red asterisk that marks required fields */
+.required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+/* Label used above radio/checkbox groups (not connected to a single input) */
+.group-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   11. TEXT INPUTS, EMAIL, TEL, DATE — Full-width fields
+   These styles apply to all single-line input types.
+   ============================================================ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"] {
+  width: 100%;               /* Full width of the form */
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9fafc;
+  border: 2px solid #dde2ea;
+  border-radius: 8px;
+  outline: none;             /* Remove default browser outline */
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  /* transition creates a smooth animation when the focus style changes */
+}
+
+/* FOCUS EFFECT — highlights the field the user is typing in */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus {
+  border-color: #5a4fcf;     /* Purple border on focus */
+  box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.15); /* Soft glow */
+  background-color: #ffffff;
+}
+
+/* ============================================================
+   12. TEXTAREA — Multi-line input (used for Address)
+   ============================================================ */
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9fafc;
+  border: 2px solid #dde2ea;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical;          /* Allows user to resize only vertically */
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+textarea:focus {
+  border-color: #5a4fcf;
+  box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.15);
+  background-color: #ffffff;
+}
+
+/* ============================================================
+   13. SELECT — Dropdown menu
+   ============================================================ */
+select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9fafc;
+  border: 2px solid #dde2ea;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;           /* Shows a pointer/hand cursor on hover */
+  appearance: none;          /* Removes default browser arrow icon */
+  /* Custom arrow icon using SVG encoded in CSS */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a4fcf' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+select:focus {
+  border-color: #5a4fcf;
+  box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.15);
+  background-color: #ffffff;
+}
+
+/* ============================================================
+   14. RADIO BUTTONS
+   Radio buttons let the user pick ONLY ONE option from a group.
+   ============================================================ */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;           /* Wrap to next line on small screens */
+  gap: 12px 24px;            /* Space between each radio option */
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;       /* Align the circle and text on the same line */
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Style the radio circle */
+input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #5a4fcf;    /* accent-color sets the colour of the radio dot */
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   15. CHECKBOXES
+   Checkboxes let the user select MULTIPLE options at once.
+   ============================================================ */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #5a4fcf;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   16. CONFIRMATION CHECKBOX (Section 5)
+   A larger, pill-style confirmation row.
+   ============================================================ */
+.confirm-group {
+  background: #f0eeff;
+  border: 2px solid #d5cffb;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.confirm-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3d3480;
+}
+
+/* ============================================================
+   17. BUTTON GROUP — Submit & Reset buttons
+   ============================================================ */
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+/* Base button styles shared by both buttons */
+.btn {
+  padding: 12px 36px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;              /* Remove default border */
+  border-radius: 30px;       /* Pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+  /* transition creates smooth animation on hover */
+}
+
+/* SUBMIT BUTTON — Primary action, filled purple */
+.btn-submit {
+  background: linear-gradient(135deg, #5a4fcf, #764ba2);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(90, 79, 207, 0.35);
+}
+
+/* Hover effect: lifts the button slightly */
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(90, 79, 207, 0.45);
+}
+
+/* Active (click) effect: pushes button down */
+.btn-submit:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 12px rgba(90, 79, 207, 0.3);
+}
+
+/* RESET BUTTON — Secondary action, outlined style */
+.btn-reset {
+  background: transparent;
+  color: #5a4fcf;
+  border: 2px solid #5a4fcf;
+}
+
+.btn-reset:hover {
+  background: #5a4fcf;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(90, 79, 207, 0.3);
+}
+
+.btn-reset:active {
+  transform: translateY(0px);
+}
+
+/* ============================================================
+   18. FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   19. RESPONSIVE DESIGN — Mobile Screens
+   @media rules apply styles ONLY when the screen is small.
+   max-width: 600px means "apply these styles on screens
+   600 pixels wide or smaller" (phones and small tablets).
+   ============================================================ */
+@media (max-width: 600px) {
+
+  .header-content h1 {
+    font-size: 1.5rem;          /* Slightly smaller title */
+  }
+
+  .registration-form {
+    border-radius: 12px;
+  }
+
+  .form-section {
+    padding: 0 16px 8px;
+  }
+
+  .form-section:first-of-type {
+    padding-top: 20px;
+  }
+
+  fieldset {
+    padding: 16px 14px 20px;
+  }
+
+  .button-group {
+    flex-direction: column;     /* Stack buttons vertically on mobile */
+    align-items: stretch;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    gap: 10px 16px;
+  }
+}

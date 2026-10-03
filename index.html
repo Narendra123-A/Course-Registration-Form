@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- 
+  DOCTYPE tells the browser this is an HTML5 document.
+  Always place this at the very top of your HTML file.
+-->
+<html lang="en">
+
+<head>
+  <!-- The <head> section contains metadata (info about the page, not shown on screen) -->
+
+  <meta charset="UTF-8" />
+  <!-- charset="UTF-8" allows all characters and symbols to display correctly -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- viewport meta tag makes the page responsive on mobile screens -->
+
+  <title>Course Registration Form</title>
+  <!-- The title appears on the browser tab -->
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Links our external CSS file to style this HTML page -->
+</head>
+
+<body>
+  <!-- The <body> contains everything visible on the webpage -->
+
+  <!-- ========== HEADER ========== -->
+  <!-- <header> is a semantic element for the top section of a page -->
+  <header>
+    <div class="header-content">
+      <h1>📚 Course Registration Form</h1>
+      <p>Fill in the details below to register for your desired course.</p>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <!-- <main> wraps the primary content of the page -->
+  <main>
+
+    <!-- The <form> element collects user input. 
+         action="#" means no data is sent anywhere (for demonstration).
+         method="post" is how data would be sent to a server. -->
+    <form action="#" method="post" class="registration-form">
+
+      <!-- ====================================================
+           SECTION 1: STUDENT INFORMATION
+           ==================================================== -->
+      <!-- <section> is a semantic grouping element -->
+      <section class="form-section">
+
+        <!-- <fieldset> groups related form elements together visually -->
+        <!-- <legend> is the title/label for the fieldset group -->
+        <fieldset>
+          <legend>👤 Section 1: Student Information</legend>
+
+          <!-- FULL NAME -->
+          <!-- <label> describes the input. "for" must match the input's "id" -->
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <!-- input type="text" accepts any text. 
+                 "required" means the user must fill this before submitting.
+                 "placeholder" shows hint text inside the field. -->
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- EMAIL ADDRESS -->
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <!-- input type="email" checks that the value looks like an email (has @ and .) -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            />
+          </div>
+
+          <!-- PHONE NUMBER -->
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <!-- input type="tel" is used for telephone numbers -->
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91 9876543210"
+              required
+            />
+          </div>
+
+          <!-- DATE OF BIRTH -->
+          <div class="form-group">
+            <label for="dob">Date of Birth <span class="required">*</span></label>
+            <!-- input type="date" shows a date picker calendar -->
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              required
+            />
+          </div>
+
+          <!-- GENDER (Radio Buttons) -->
+          <div class="form-group">
+            <label class="group-label">Gender <span class="required">*</span></label>
+            <!-- Radio buttons: Only ONE can be selected at a time.
+                 All radios in the same group must share the same "name" attribute. -->
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="male" required /> Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="female" /> Female
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="other" /> Other
+              </label>
+            </div>
+          </div>
+
+          <!-- ADDRESS (Textarea) -->
+          <div class="form-group">
+            <label for="address">Address</label>
+            <!-- <textarea> is used for multi-line text input.
+                 "rows" sets the visible height of the box. -->
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              placeholder="Enter your full address (street, city, state, pincode)"
+            ></textarea>
+          </div>
+
+        </fieldset>
+      </section>
+
+      <!-- ====================================================
+           SECTION 2: COURSE INFORMATION
+           ==================================================== -->
+      <section class="form-section">
+        <fieldset>
+          <legend>📖 Section 2: Course Information</legend>
+
+          <!-- SELECT COURSE (Dropdown) -->
+          <div class="form-group">
+            <label for="course">Select Course <span class="required">*</span></label>
+            <!-- <select> creates a dropdown menu.
+                 Each <option> is one item in the menu.
+                 value="" with disabled + selected acts as placeholder. -->
+            <select id="course" name="course" required>
+              <option value="" disabled selected>-- Choose a Course --</option>
+              <option value="html-css">HTML &amp; CSS</option>
+              <option value="java">Java</option>
+              <option value="python">Python</option>
+              <option value="javascript">JavaScript</option>
+              <option value="web-dev">Web Development</option>
+            </select>
+          </div>
+
+          <!-- COURSE DURATION (Radio Buttons) -->
+          <div class="form-group">
+            <label class="group-label">Course Duration <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="duration" value="1month" required /> 1 Month
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="duration" value="3months" /> 3 Months
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="duration" value="6months" /> 6 Months
+              </label>
+            </div>
+          </div>
+
+          <!-- LEARNING MODE (Radio Buttons) -->
+          <div class="form-group">
+            <label class="group-label">Learning Mode <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="mode" value="online" required /> Online
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="mode" value="offline" /> Offline
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="mode" value="hybrid" /> Hybrid
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </section>
+
+      <!-- ====================================================
+           SECTION 3: EDUCATIONAL INFORMATION
+           ==================================================== -->
+      <section class="form-section">
+        <fieldset>
+          <legend>🎓 Section 3: Educational Information</legend>
+
+          <!-- HIGHEST QUALIFICATION -->
+          <div class="form-group">
+            <label for="qualification">Highest Qualification <span class="required">*</span></label>
+            <input
+              type="text"
+              id="qualification"
+              name="qualification"
+              placeholder="e.g., Bachelor of Science, 12th Grade"
+              required
+            />
+          </div>
+
+          <!-- COLLEGE / SCHOOL NAME -->
+          <div class="form-group">
+            <label for="school">College / School Name <span class="required">*</span></label>
+            <input
+              type="text"
+              id="school"
+              name="school"
+              placeholder="e.g., ABC College of Engineering"
+              required
+            />
+          </div>
+
+          <!-- GRADUATION YEAR -->
+          <div class="form-group">
+            <label for="gradYear">Graduation Year <span class="required">*</span></label>
+            <input
+              type="text"
+              id="gradYear"
+              name="gradYear"
+              placeholder="e.g., 2024"
+              required
+            />
+          </div>
+
+          <!-- SKILLS (Checkboxes) -->
+          <div class="form-group">
+            <label class="group-label">Skills (Select all that apply)</label>
+            <!-- Checkboxes: MULTIPLE can be selected at the same time.
+                 Each checkbox has its own unique "name" or same name with different values. -->
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="skills" value="html" /> HTML
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="skills" value="css" /> CSS
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="skills" value="java" /> Java
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="skills" value="python" /> Python
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="skills" value="javascript" /> JavaScript
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </section>
+
+      <!-- ====================================================
+           SECTION 4: ACCOUNT INFORMATION
+           ==================================================== -->
+      <section class="form-section">
+        <fieldset>
+          <legend>🔐 Section 4: Account Information</legend>
+
+          <!-- USERNAME -->
+          <div class="form-group">
+            <label for="username">Username <span class="required">*</span></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Choose a unique username"
+              required
+            />
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label for="password">Password <span class="required">*</span></label>
+            <!-- input type="password" hides the characters as the user types -->
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a strong password"
+              required
+            />
+          </div>
+
+          <!-- CONFIRM PASSWORD -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              required
+            />
+          </div>
+
+        </fieldset>
+      </section>
+
+      <!-- ====================================================
+           SECTION 5: FINAL CONFIRMATION
+           ==================================================== -->
+      <section class="form-section">
+        <fieldset>
+          <legend>✅ Section 5: Final Confirmation</legend>
+
+          <!-- CONFIRMATION CHECKBOX -->
+          <div class="form-group confirm-group">
+            <label class="checkbox-label confirm-label">
+              <!-- A single checkbox used as an agreement/confirmation toggle -->
+              <input
+                type="checkbox"
+                id="confirm"
+                name="confirm"
+                required
+              />
+              I confirm that the information provided is correct.
+            </label>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="button-group">
+            <!-- type="submit" sends the form data when clicked -->
+            <button type="submit" class="btn btn-submit">Submit Registration</button>
+
+            <!-- type="reset" clears ALL form fields back to their default values -->
+            <button type="reset" class="btn btn-reset">Reset Form</button>
+          </div>
+
+        </fieldset>
+      </section>
+
+    </form>
+    <!-- End of <form> -->
+
+  </main>
+  <!-- End of <main> -->
+
+  <!-- ========== FOOTER ========== -->
+  <!-- <footer> holds copyright or contact info at the bottom of the page -->
+  <footer>
+    <p>&copy; 2026 Course Registration Form | Built with HTML &amp; CSS</p>
+  </footer>
+
+</body>
+</html>
